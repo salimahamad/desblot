@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <form class="row flex-row-reverse mt-4" action="https://mpago.la/2C7Bahd">
+    <form class="row flex-row-reverse mt-4"  method="POST" id="submitFrom">
       <div class="col-md-4">
         <div class="card mb-4">
           <div class="card-body">
@@ -114,11 +114,13 @@
         </div>
         <div class="mb-4">
           <label>
-            <input  name="terms" type="checkbox" value="true"> Al marcar esta casilla, confirma que ha leído y entendido nuestro <a href="trems.php" target="_blank">Términos y condiciones</a> and <a href="privacy.php" target="_blank">Política de privacidad</a>  documentos.</label>
+            <input  name="terms" type="checkbox" value="" id="tremsPolicy"> Al marcar esta casilla, confirma que ha leído y entendido nuestro <a href="trems.php" target="_blank">Términos y condiciones</a> and <a href="privacy.php" target="_blank">Política de privacidad</a>  documentos.</label>
         </div>
         <button type="submit" class="btn btn-primary btn-lg d-flex align-items-center px-5 rounded-pill">Pagar Ahora &nbsp;&nbsp;&nbsp; <span class="material-symbols-outlined"> credit_score </span></button>
       </div>
     </form>
   </div>
 </section>
+
+</script>
 <?php include 'footer.php'; ?>

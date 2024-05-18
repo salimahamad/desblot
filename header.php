@@ -1,4 +1,15 @@
-<?php  $title ; 
+<?php  
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$databasename = "storingapps";
+$conn = new mysqli($servername, $username, $password, $databasename);
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$title ; 
 $page = $_SERVER['PHP_SELF']; 
 $data = explode('/', $page);
 $page = $data[count($data)-1]; 
@@ -26,7 +37,6 @@ $page = $data[count($data)-1];
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
       <title> <?php echo $title;?> | Desblot </title> 
-    <title>.::  ::.</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- slick -->
@@ -34,6 +44,9 @@ $page = $data[count($data)-1];
     <!-- google icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- header start-->

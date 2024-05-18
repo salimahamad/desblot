@@ -408,3 +408,45 @@ if (formDataString) {
     }
     
 }
+ 
+    $('#submitFrom').submit(function(e) {
+
+        e.preventDefault(); 
+	    var storedFormData = JSON.parse(formDataString);
+    	let email = $('#emailaddess').val();
+    	let cardPayment = $('#CardPayment').val();
+    	 
+	  	if($('#tremsPolicy').is(':checked')) {
+		    $(this).prop('checked',true);
+		    storedFormData.tremsPolicy= 1;  
+		}else{
+			storedFormData.tremsPolicy= 0; 
+	 
+		}
+    	if (email != null){
+    		storedFormData.email=email; 
+    	}
+    	if (cardPayment == 'on'){
+    		storedFormData.cardPayment='Yes'; 
+    	} 
+    	 
+    	localStorage.setItem('formData', JSON.stringify(storedFormData));
+  
+     
+      $.ajax({
+        url: 'store.php',
+        type: 'POST',
+        data: {
+          dataFromStorage: storedFormData
+        },
+        success: function(res) {
+            console.log(res); 
+            if (res == 1) {
+	          window.location.href = 'https://mpago.la/2C7Bahd';
+	        }
+        },
+        error: function(xhr, status, error) {
+          console.error(xhr.responseText);
+        }
+      });
+    });
